@@ -16,9 +16,13 @@ fetch("https://api.myjson.com/bins/9l2ez").then(function (response) {
       if (data.todos[i].complete) {
         elemList.classList.add("complete");
       }
+
+      elemList.addEventListener("click", function (e) {
+        e.target.classList.toggle("complete");
+      });
+
       elemList.appendChild(textElem);
       list.appendChild(elemList);
-      console.log(data.todos[i]);
     }
   });
 }).catch(function (error) {
